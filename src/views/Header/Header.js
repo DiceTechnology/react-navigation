@@ -11,7 +11,6 @@ import {
   ViewPropTypes,
 } from 'react-native';
 import { MaskedViewIOS } from '../../PlatformHelpers';
-import SafeAreaView from 'react-native-safe-area-view';
 
 import HeaderTitle from './HeaderTitle';
 import HeaderBackButton from './HeaderBackButton';
@@ -492,12 +491,12 @@ class Header extends React.PureComponent {
 
     return (
       <Animated.View style={this.props.layoutInterpolator(this.props)}>
-        <SafeAreaView forceInset={forceInset} style={containerStyles}>
+        <View style={containerStyles}>
           <View style={StyleSheet.absoluteFill}>
             {options.headerBackground}
           </View>
           <View style={styles.flexOne}>{appBar}</View>
-        </SafeAreaView>
+        </View>
       </Animated.View>
     );
   }
